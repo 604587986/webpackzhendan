@@ -29,6 +29,9 @@ const commonsChunk = commonsChunkName();
 
 module.exports = webpackMerge(baseWebpackConfig, {
 	devtool: config.sourceMap || false,
+	output:{
+		publicPath: './'
+	},
 
 	plugins: [
 		// 环境变量
@@ -81,9 +84,9 @@ module.exports = webpackMerge(baseWebpackConfig, {
 			chunks: [chunkName].concat(commonsChunk),
 			inject: true,
 			minify: {
-				removeComments: true,
-				collapseWhitespace: true,
-				removeAttributeQuotes: true
+				removeComments: false,
+				collapseWhitespace: false,
+				removeAttributeQuotes: false
 			},
 			showErrors: true,
 			chunksSortMode: function(chunk1, chunk2) {

@@ -29,12 +29,11 @@ module.exports = {
 	commonAlias: {
 		Static: 'static',
 		'@': 'pages',
-		'Spa@': 'pages/index',
-		'Spa@comp': 'pages/index/js/components'
+
 	},
 	// 外部扩展
 	externals: {
-
+		'$': 'JQuery'
 	},
 	// 公众模块(默认情况下common／js文件下的文件作为`commons chunk`打包)
 	commons: {
